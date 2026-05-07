@@ -6,7 +6,7 @@
 
 ## ステータス
 
-**Phase 0: プロジェクトセットアップ** — 進行中
+**Phase 1: 認証基盤** — 完了（実機での Google OAuth 接続は要設定）
 
 実装計画は [`docs/claude_code_instructions.md`](docs/claude_code_instructions.md) を参照。
 
@@ -21,6 +21,7 @@
 | [`docs/prompt_design_v1_clone_response.md`](docs/prompt_design_v1_clone_response.md)         | クローン応答プロンプト v1           |
 | [`docs/prompt_design_v1_profile_extraction.md`](docs/prompt_design_v1_profile_extraction.md) | プロファイル抽出プロンプト v1       |
 | [`docs/phase_0_decisions.md`](docs/phase_0_decisions.md)                                     | Phase 0 技術選択の記録              |
+| [`docs/phase_1_decisions.md`](docs/phase_1_decisions.md)                                     | Phase 1 認証基盤の実装メモ          |
 
 ## 技術スタック
 
@@ -55,14 +56,15 @@ pnpm dev
 
 ### スクリプト
 
-| コマンド            | 内容                        |
-| ------------------- | --------------------------- |
-| `pnpm dev`          | 開発サーバ起動（Turbopack） |
-| `pnpm build`        | プロダクションビルド        |
-| `pnpm start`        | プロダクション起動          |
-| `pnpm lint`         | ESLint 実行                 |
-| `pnpm format`       | Prettier で整形             |
-| `pnpm format:check` | Prettier の差分確認         |
+| コマンド            | 内容                                              |
+| ------------------- | ------------------------------------------------- |
+| `pnpm dev`          | 開発サーバ起動（Turbopack）                       |
+| `pnpm build`        | プロダクションビルド                              |
+| `pnpm start`        | プロダクション起動                                |
+| `pnpm lint`         | ESLint 実行                                       |
+| `pnpm format`       | Prettier で整形                                   |
+| `pnpm format:check` | Prettier の差分確認                               |
+| `pnpm db:setup`     | `src/lib/db/schema.sql` を Vercel Postgres に適用 |
 
 ## デプロイ
 
